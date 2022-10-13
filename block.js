@@ -52,14 +52,14 @@ class Block {
   }
 }
 
-const Block1 = new Block({
-  timestamp: Date.now(),
-  prevhash: "0x000",
-  hash: "0x123",
-  data: "Genesis Block",
-  nonce: 0,
-  difficulty: 2,
-});
+// const Block1 = new Block({
+//   timestamp: Date.now(),
+//   prevhash: "0x000",
+//   hash: "0x123",
+//   data: "Genesis Block",
+//   nonce: 0,
+//   difficulty: 2,
+// });
 
 // const genesisblock = Block.genesis();
 // console.log(genesisblock);

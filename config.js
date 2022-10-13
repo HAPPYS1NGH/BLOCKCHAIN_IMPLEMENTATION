@@ -7,7 +7,7 @@ const PREVHASH =
 const HASH = cryptoHash(TIMESTAMP, PREVHASH, 0, INITIAL_DIFFICLTY);
 const GENESIS_DATA = {
   timestamp: TIMESTAMP,
-  prevhash: "0x000",
+  prevhash: PREVHASH,
   hash: HASH,
   data: [],
   nonce: 0,
