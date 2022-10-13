@@ -17,11 +17,23 @@ class PubSub {
   }
   handleMessage(channel, message) {
     console.log(`Message Recieved at Channel ${channel}  Message : ${message}`);
+    const parseMessage = JSON.parse(message);
+    if (channel === CHANNELS.BLOCKCHAIN) {
+      this.blockchain.replaceChain(parseMessage);
+    }
   }
-  publish(channel, message) {
+  publish({ channel, message }) {
     this.publisher.publish(channel, message);
+  }
+  broadcastChain() {
+    this.publish({
+      channel: CHANNELS.BLOCKCHAIN,
+      message: JSON.stringify(this.blockchain.chain),
+    });
   }
 }
 
 // const checkPubSub = new PubSub();
 // setTimeout(() => checkPubSub.publisher.publish(CHANNELS.TEST, "HELLO"), 1000);
+
+module.exports = PubSub;
